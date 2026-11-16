@@ -90,7 +90,7 @@ these resources.
 Clone the repository and run the complete verification suite:
 
 ```bash
-git clone https://github.com/tospery/HiAndroid.git
+git clone https://github.com/pcfprio/HiAndroid.git
 cd HiAndroid
 ./gradlew clean check
 ```

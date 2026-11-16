@@ -11,11 +11,11 @@ class SocialSharingTest {
             SocialSharingContent(
                 title = "AtlasHub",
                 text = "Explore GitHub",
-                url = "https://github.com/tospery/AtlasHub",
+                url = "https://github.com/pcfprio/AtlasHub",
             )
 
         assertEquals(
-            "Explore GitHub\nhttps://github.com/tospery/AtlasHub",
+            "Explore GitHub\nhttps://github.com/pcfprio/AtlasHub",
             content.textWithUrl,
         )
     }

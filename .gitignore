@@ -1,9 +1,6 @@
 # Compiled class file
 *.class
 
-# Log file
-*.log
-
 # BlueJ files
 *.ctxt
 
@@ -24,10 +21,7 @@ hs_err_pid*
 replay_pid*
 *.hprof
 
-# Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
-.kotlin/
-# Tospery Android HiAndroid generated files
-
+# HiAndroid generated files
 # Gradle 与 Kotlin 构建缓存、所有模块的 build 目录。
 .gradle/
 .kotlin/
@@ -41,15 +35,25 @@ local.properties
 .cxx/
 captures/
 
-# Android Studio 与 IntelliJ IDEA 本地文件。
+# Android Studio、VS Code 与 IntelliJ IDEA 本地文件。
 .idea/
+.vscode/
 *.iml
 
-# macOS 与日志文件。
+# macOS、本地辅助工具与日志文件。
 .DS_Store
+._*
 *.log
+/.codegraph/
+/.claude/worktrees/
+/.claude/settings.local.json
+temp/
 
-# 本地签名文件和私钥文件。
+# 本地环境配置、签名文件和私钥文件。
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
 *.jks
 *.keystore
 *.p12

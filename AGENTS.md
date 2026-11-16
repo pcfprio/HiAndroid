@@ -32,7 +32,7 @@ HiAndroid（专名“HiAndroid 效率库”，规则与文档叙述使用该专�
 
 ### Issue tracker
 
-本仓库的工作项和规格说明记录在 `tospery/HiAndroid` 的 GitHub Issues 中。详见 `docs/agents/issue-tracker.md`。
+本仓库的工作项和规格说明记录在 `pcfprio/HiAndroid` 的 GitHub Issues 中。详见 `docs/agents/issue-tracker.md`。
 
 ### Triage labels
 

@@ -124,7 +124,7 @@ data class MavenModuleMetadata(
 val hiAndroidGroupId = "com.tospery"
 val hiAndroidVersion = "2.0.0"
 val hiAndroidRepositoryUrl =
-    "https://github.com/tospery/HiAndroid"
+    "https://github.com/pcfprio/HiAndroid"
 
 /**
  * Maven 发布模块白名单。
@@ -495,20 +495,20 @@ subprojects {
 
             developers {
                 developer {
-                    id.set("tospery")
-                    name.set("Tospery")
-                    url.set("https://github.com/tospery")
+                    id.set("pcfprio")
+                    name.set("pcfprio")
+                    url.set("https://github.com/pcfprio")
                 }
             }
 
             scm {
                 url.set(hiAndroidRepositoryUrl)
                 connection.set(
-                    "scm:git:git://github.com/tospery/" +
+                    "scm:git:git://github.com/pcfprio/" +
                         "HiAndroid.git",
                 )
                 developerConnection.set(
-                    "scm:git:ssh://git@github.com/tospery/" +
+                    "scm:git:ssh://git@github.com/pcfprio/" +
                         "HiAndroid.git",
                 )
             }
