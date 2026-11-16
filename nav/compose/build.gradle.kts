@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.nav.compose"
+    namespace = "com.pcfprio.nav.compose"
     compileSdk = 37
 
     defaultConfig {

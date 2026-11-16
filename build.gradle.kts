@@ -70,7 +70,7 @@ subprojects {
         .trim(':')
         .replace(Regex("[^A-Za-z0-9_]"), "_")
         .ifBlank { "root" }
-    val moduleMetadataPackageName = "com.tospery.buildmetadata.module_$moduleIdentifier"
+    val moduleMetadataPackageName = "com.pcfprio.buildmetadata.module_$moduleIdentifier"
     val generatedModuleMetadataDirectory = layout.buildDirectory.dir(
         "generated/source/module-metadata/kotlin",
     )
@@ -121,7 +121,7 @@ data class MavenModuleMetadata(
     val description: String,
 )
 
-val hiAndroidGroupId = "com.tospery"
+val hiAndroidGroupId = "com.pcfprio"
 val hiAndroidVersion = "2.0.0"
 val hiAndroidRepositoryUrl =
     "https://github.com/pcfprio/HiAndroid"
@@ -134,112 +134,112 @@ val hiAndroidRepositoryUrl =
 val hiAndroidPublicationModules = mapOf(
     ":base" to MavenModuleMetadata(
         artifactId = "base",
-        displayName = "Tospery Base",
+        displayName = "HiAndroid Base",
         description =
             "Pure Kotlin reusable base abstractions and common models.",
     ),
     ":core" to MavenModuleMetadata(
         artifactId = "core",
-        displayName = "Tospery Core",
+        displayName = "HiAndroid Core",
         description =
             "Reusable Android and Compose core utilities.",
     ),
     ":store" to MavenModuleMetadata(
         artifactId = "store",
-        displayName = "Tospery Store",
+        displayName = "HiAndroid Store",
         description =
             "Reusable Android storage contracts, secure values and cache stores.",
     ),
     ":store:datastore" to MavenModuleMetadata(
         artifactId = "store-datastore",
-        displayName = "Tospery Store DataStore",
+        displayName = "HiAndroid Store DataStore",
         description =
-            "AndroidX DataStore adapter for Tospery storage contracts.",
+            "AndroidX DataStore adapter for HiAndroid storage contracts.",
     ),
     ":store:keystore" to MavenModuleMetadata(
         artifactId = "store-keystore",
-        displayName = "Tospery Store Keystore",
+        displayName = "HiAndroid Store Keystore",
         description =
             "Android Keystore backed secure string storage adapter.",
     ),
     ":nav" to MavenModuleMetadata(
         artifactId = "nav",
-        displayName = "Tospery Navigation",
+        displayName = "HiAndroid Navigation",
         description =
             "Platform-independent URL and URI navigation abstractions.",
     ),
     ":net" to MavenModuleMetadata(
         artifactId = "net",
-        displayName = "Tospery Network",
+        displayName = "HiAndroid Network",
         description =
             "Platform-independent networking abstractions and models.",
     ),
     ":net:retrofit" to MavenModuleMetadata(
         artifactId = "net-retrofit",
-        displayName = "Tospery Network Retrofit",
+        displayName = "HiAndroid Network Retrofit",
         description =
-            "Retrofit, OkHttp and Moshi implementation for Tospery Network.",
+            "Retrofit, OkHttp and Moshi implementation for HiAndroid Network.",
     ),
     ":suite" to MavenModuleMetadata(
         artifactId = "suite",
-        displayName = "Tospery Suite",
+        displayName = "HiAndroid Suite",
         description =
             "Reusable Android app utilities and Compose components.",
     ),
     ":suite:coil" to MavenModuleMetadata(
         artifactId = "suite-coil",
-        displayName = "Tospery Suite Coil",
-        description = "Coil image viewing and cache adapter for Tospery Suite.",
+        displayName = "HiAndroid Suite Coil",
+        description = "Coil image viewing and cache adapter for HiAndroid Suite.",
     ),
     ":suite:media3" to MavenModuleMetadata(
         artifactId = "suite-media3",
-        displayName = "Tospery Suite Media3",
-        description = "AndroidX Media3 player UI for Tospery Suite.",
+        displayName = "HiAndroid Suite Media3",
+        description = "AndroidX Media3 player UI for HiAndroid Suite.",
     ),
     ":suite:log-timber" to MavenModuleMetadata(
         artifactId = "suite-log-timber",
-        displayName = "Tospery Suite Timber Logging",
-        description = "Opt-in Timber adapter for Tospery logging contracts.",
+        displayName = "HiAndroid Suite Timber Logging",
+        description = "Opt-in Timber adapter for HiAndroid logging contracts.",
     ),
     ":suite:aliyun-emas-core" to MavenModuleMetadata(
         artifactId = "suite-aliyun-emas-core",
-        displayName = "Tospery Suite Aliyun EMAS Core",
+        displayName = "HiAndroid Suite Aliyun EMAS Core",
         description =
-            "Privacy-aware Alibaba Cloud EMAS mobile monitoring adapter for Tospery Suite.",
+            "Privacy-aware Alibaba Cloud EMAS mobile monitoring adapter for HiAndroid Suite.",
     ),
     ":suite:umeng-core" to MavenModuleMetadata(
         artifactId = "suite-umeng-core",
-        displayName = "Tospery Suite Umeng Core",
+        displayName = "HiAndroid Suite Umeng Core",
         description =
             "Shared privacy-aware lifecycle runtime for Umeng Android products.",
     ),
     ":suite:analytics-umeng" to MavenModuleMetadata(
         artifactId = "suite-analytics-umeng",
-        displayName = "Tospery Suite Analytics Umeng",
+        displayName = "HiAndroid Suite Analytics Umeng",
         description =
-            "Umeng analytics adapter for Tospery Suite.",
+            "Umeng analytics adapter for HiAndroid Suite.",
     ),
     ":suite:performance-umeng" to MavenModuleMetadata(
         artifactId = "suite-performance-umeng",
-        displayName = "Tospery Suite Performance Umeng",
+        displayName = "HiAndroid Suite Performance Umeng",
         description =
-            "Umeng U-APM performance monitoring adapter for Tospery Suite.",
+            "Umeng U-APM performance monitoring adapter for HiAndroid Suite.",
     ),
     ":nav:compose" to MavenModuleMetadata(
         artifactId = "nav-compose",
-        displayName = "Tospery Navigation Compose",
+        displayName = "HiAndroid Navigation Compose",
         description =
-            "Jetpack Navigation Compose adapter for Tospery Navigation.",
+            "Jetpack Navigation Compose adapter for HiAndroid Navigation.",
     ),
     ":nav:umeng-ulink" to MavenModuleMetadata(
         artifactId = "nav-umeng-ulink",
-        displayName = "Tospery Navigation Umeng U-Link",
+        displayName = "HiAndroid Navigation Umeng U-Link",
         description =
             "Umeng U-Link wake-up and deferred navigation adapter.",
     ),
     ":suite:socialsharing-umeng" to MavenModuleMetadata(
         artifactId = "suite-socialsharing-umeng",
-        displayName = "Tospery Suite Social Sharing Umeng",
+        displayName = "HiAndroid Suite Social Sharing Umeng",
         description =
             "Umeng U-Share adapter for vendor-independent social sharing contracts.",
     ),
@@ -251,13 +251,13 @@ val hiAndroidPublicationModules = mapOf(
     ),
     ":github:model:core" to MavenModuleMetadata(
         artifactId = "github-model-core",
-        displayName = "Tospery GitHub Model Core",
+        displayName = "HiAndroid GitHub Model Core",
         description =
             "Reusable core models for GitHub integrations.",
     ),
     ":github:trending" to MavenModuleMetadata(
         artifactId = "github-trending",
-        displayName = "Tospery GitHub Trending",
+        displayName = "HiAndroid GitHub Trending",
         description =
             "Kotlin API and HTML parser for GitHub Trending.",
     ),
@@ -271,7 +271,7 @@ subprojects {
         hiAndroidPublicationModules[path] ?: return@subprojects
 
     // 嵌套 model/core 与根 core 的叶子名称相同，需要使用唯一的本地组件 group。
-    // Maven 发布仍由 coordinates() 固定为 com.tospery:github-model-core。
+    // Maven 发布仍由 coordinates() 固定为 com.pcfprio:github-model-core。
     val compositeProjectGroup =
         if (path == ":github:model:core") {
             "$hiAndroidGroupId.github.model"

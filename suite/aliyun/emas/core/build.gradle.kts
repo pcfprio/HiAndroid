@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite.aliyun.emas.core"
+    namespace = "com.pcfprio.suite.aliyun.emas.core"
     compileSdk = 37
 
     defaultConfig {

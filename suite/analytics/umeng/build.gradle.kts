@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite.analytics.umeng"
+    namespace = "com.pcfprio.suite.analytics.umeng"
     compileSdk = 37
 
     defaultConfig {

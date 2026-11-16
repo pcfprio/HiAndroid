@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.hiandroid"
+    namespace = "com.pcfprio.hiandroid"
     compileSdk = 37
 
     defaultConfig {

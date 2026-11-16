@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite.socialsharing.umeng"
+    namespace = "com.pcfprio.suite.socialsharing.umeng"
     compileSdk = 37
 
     defaultConfig {

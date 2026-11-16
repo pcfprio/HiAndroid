@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.store.datastore"
+    namespace = "com.pcfprio.store.datastore"
     compileSdk = 37
 
     defaultConfig {

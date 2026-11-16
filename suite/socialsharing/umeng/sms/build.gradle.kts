@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite.socialsharing.umeng.sms"
+    namespace = "com.pcfprio.suite.socialsharing.umeng.sms"
     compileSdk = 37
 
     defaultConfig {

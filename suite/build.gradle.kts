@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite"
+    namespace = "com.pcfprio.suite"
     compileSdk = 37
 
     defaultConfig {

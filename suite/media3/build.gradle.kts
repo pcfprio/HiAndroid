@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite.media3"
+    namespace = "com.pcfprio.suite.media3"
     compileSdk = 37
     defaultConfig {
         minSdk = 30

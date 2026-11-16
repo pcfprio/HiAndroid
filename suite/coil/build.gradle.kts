@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.suite.coil"
+    namespace = "com.pcfprio.suite.coil"
     compileSdk = 37
     defaultConfig {
         minSdk = 30

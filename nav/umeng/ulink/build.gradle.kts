@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tospery.nav.umeng.ulink"
+    namespace = "com.pcfprio.nav.umeng.ulink"
     compileSdk = 37
 
     defaultConfig {
