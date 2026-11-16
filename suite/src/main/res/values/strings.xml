@@ -1,0 +1,22 @@
+<resources>
+    <string name="suite_clear_text">Clear text</string>
+    <string name="suite_close_dialog">Close dialog</string>
+    <string name="suite_snackbar_dismiss">Dismiss message</string>
+    <string name="suite_action_retry">Retry</string>
+    <string name="suite_navigate_back_content_description">Navigate back</string>
+    <string name="suite_web_back">Back</string>
+    <string name="suite_web_close">Close web page</string>
+    <string name="suite_web_open_external">Open in browser</string>
+    <string name="suite_web_open_external_app">Open in app</string>
+    <string name="suite_web_invalid_url">This link cannot be opened.</string>
+    <string name="suite_web_load_error">Unable to load this page.</string>
+    <string name="suite_web_load_failed">Page loading failed.</string>
+    <string name="suite_load_more_loading">Loading more…</string>
+    <string name="suite_load_more_failed">Couldn’t load more</string>
+    <string name="suite_load_more_retry">Retry</string>
+    <string name="suite_list_updated">List updated</string>
+    <string name="suite_list_view">View</string>
+    <string name="suite_pdf_error_description">This PDF could not be opened. The file may be invalid, encrypted, or use unsupported features.</string>
+    <string name="suite_pdf_page_error">Unable to render PDF page %1$d.</string>
+    <string name="suite_pdf_page_description">PDF page %1$d of %2$d</string>
+</resources>
