@@ -4,19 +4,19 @@
 
 ## 常用操作
 
-- 创建：`gh issue create --title "..." --body "..."`。多行正文优先通过文件传入。
+- 创建：`gh issue create --title "..." --body "..."`。多行正文优先通过文件或 heredoc 传入。
 - 查看：`gh issue view <编号> --json number,title,body,labels,comments`。
-- 列出：`gh issue list --state open --json number,title,body,labels,comments`，按需加 `--label` 或调整 `--state`。
+- 列出：`gh issue list --state open --json number,title,body,labels,comments --jq '[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments[].body]}]'`，按需加 `--label` 或调整 `--state`。
 - 评论：`gh issue comment <编号> --body "..."`。
 - 加、移标签：`gh issue edit <编号> --add-label "..."`、`gh issue edit <编号> --remove-label "..."`。
-- 关闭：先评论说明原因，再运行 `gh issue close <编号>`。对于已关闭的工作项，仍需单独发表评论。
+- 关闭：先用 `gh issue comment <编号> --body "..."` 评论说明原因，再运行 `gh issue close <编号>`（对于已关闭的工作项，`gh issue close --comment` 会丢弃评论，因此仍需单独发表评论）。
 
 ## 父子关系与阻塞
 
-- 建立子工作项：支持该参数的 `gh` 版本可用 `gh issue create --parent <父编号>` 或 `gh issue edit <父编号> --add-sub-issue <子编号>`。否则使用 GitHub API；若仓库未启用子工作项，在子项正文开头写 `Part of #<父编号>`。
-- 建立阻塞关系：支持该参数的 `gh` 版本可用 `gh issue edit <子编号> --add-blocked-by <阻塞项编号>`。否则使用 GitHub API 的原生依赖接口；若不可用，在子项正文开头写 `Blocked by: #<阻塞项编号>`。
-- 使用 API 建立关系时，`issue_id` 或 `sub_issue_id` 是数据库 ID，可用 `gh api repos/pcfprio/HiAndroid/issues/<编号> --jq .id` 获取，不能直接使用 `#编号`。
-- 判断是否可以开工：确认所有阻塞项已关闭；可查询 `gh api repos/pcfprio/HiAndroid/issues/<编号> --jq .issue_dependencies_summary.blocked_by`。若使用正文回退约定，则逐项核对阻塞项状态。
+- 建立子工作项：支持该参数的 `gh`（2.94+）可用 `gh issue create --parent <父编号>` 或 `gh issue edit <父编号> --add-sub-issue <子编号>`；旧版 `gh` 可运行 `gh api --method POST repos/pcfprio/HiAndroid/issues/<父编号>/sub_issues -F sub_issue_id=<子项数据库ID>`。若仓库未启用子工作项，在子项正文开头写 `Part of #<父编号>`。
+- 建立阻塞关系：优先使用 GitHub 原生依赖关系。`gh` 2.94+ 可用 `gh issue create --blocked-by <编号>,<编号>` 或 `gh issue edit <子编号> --add-blocked-by <阻塞项编号>`；旧版 `gh` 可运行 `gh api --method POST repos/pcfprio/HiAndroid/issues/<子编号>/dependencies/blocked_by -F issue_id=<阻塞项数据库ID>`。若不可用，在子项正文开头写 `Blocked by: #<阻塞项编号>`。
+- 使用 API 建立关系时，`issue_id` 或 `sub_issue_id` 是数值型数据库 ID，可用 `gh api repos/pcfprio/HiAndroid/issues/<编号> --jq .id` 获取，不能直接使用 `#编号` 或 `node_id`。
+- 判断是否可以开工：确认所有阻塞项已关闭（未关闭阻塞项数量为 0 即为可开工）；可查询 `gh api repos/pcfprio/HiAndroid/issues/<编号> --jq .issue_dependencies_summary.blocked_by`，或对 `gh issue view <编号> --json blockedBy` 使用 `--jq '[.blockedBy.nodes[] | select(.state == "OPEN")] | length'` 过滤。若使用正文回退约定，则逐项核对阻塞项状态。
 
 首次在会话中创建工作项之前，先运行 `gh repo view --json nameWithOwner` 核对目标仓库。只在用户自己的仓库创建工作项。
 
