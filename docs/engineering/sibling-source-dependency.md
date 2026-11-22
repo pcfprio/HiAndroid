@@ -6,7 +6,7 @@
 
 - 将 HiAndroid 作为独立 Git 仓库检出在消费仓库的同级目录，使用 Gradle composite build 接入；不以 Git submodule 内嵌源码。
 - 消费仓库提交版本锁，记录 HiAndroid 的公开 HTTPS 仓库地址和 **40 位完整 commit SHA**。分支名、tag、Maven 版本号、当前本地 HEAD 或未提交文件都不能代替版本锁。
-- 优先解析消费仓库同级的 `HiAndroid/`；linked worktree 可回落到主 worktree 同级目录。显式绝对路径仅改变检出位置，不放宽校验。路径是会执行 Gradle 逻辑的受信任输入。
+- 优先解析消费仓库同级的 `HiAndroid/`。显式绝对路径仅改变检出位置，不放宽校验。路径是会执行 Gradle 逻辑的受信任输入。
 - 消费模块用公开 Maven 坐标声明依赖，由消费仓库根 `settings.gradle.kts` 统一做 composite substitution；不直接引用 HiAndroid 的 Gradle project path。只替换实际消费的坐标。
 
 ## 必须接入的硬性门禁
@@ -19,7 +19,7 @@
 | Release 制品的打包、签名、上传或发布 | 上述任一状态；锁定 SHA 不在可信远端跟踪分支上 |
 | Debug 与 IDE 同步 | 可以使用偏离版本锁的本地源码，但必须明确警告；结果不得当作锁定版本的验收证据，也不得产出 Release 制品 |
 
-检查应在实际任务执行前失败；不能只由 CI 约定或命令文档承担。远端可达性判断使用已获取的可信 remote-tracking refs；必要时先 fetch。绝对路径覆盖、worktree 回落或缓存不能绕过检查。仓库应提供可重复运行的 `status`、`bootstrap`、`lock` 等操作，供新机器和云端环境恢复锁定检出。
+检查应在实际任务执行前失败；不能只由 CI 约定或命令文档承担。远端可达性判断使用已获取的可信 remote-tracking refs；必要时先 fetch。绝对路径覆盖或缓存不能绕过检查。仓库应提供可重复运行的 `status`、`bootstrap`、`lock` 等操作，供新机器和云端环境恢复锁定检出。
 
 ## 更新顺序与验证
 
